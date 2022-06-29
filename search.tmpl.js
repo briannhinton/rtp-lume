@@ -4,7 +4,7 @@ export default function ({ search }, { url }) {
   const result = [];
 
   // Search tags
-  for (const tag of search.tags("type=posts")) {
+  for (const tag of search.tags("type=talks")) {
     result.push({
       label: `Tag: ${tag}`,
       search: tag,
@@ -12,12 +12,12 @@ export default function ({ search }, { url }) {
     });
   }
 
-  // Search posts
-  for (const post of search.pages("type=posts")) {
+  // Search talks
+  for (const talk of search.pages("type=talks")) {
     result.push({
-      label: post.data.title,
-      search: `${post.data.title} ${post.data.tags.join(" ")}`,
-      value: url(post.data.url),
+      label: talk.data.title,
+      search: `${talk.data.title} ${talk.data.tags.join(" ")}`,
+      value: url(talk.data.url),
     });
   }
 

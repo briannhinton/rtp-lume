@@ -21,25 +21,25 @@ Lume and with the NetlifyCMS.
 ### Implementation Notes
 
 - `about.md` shows how to add a content page.
-- `posts/` has the blog posts but really they can live in any directory. The
-  `posts/_data.yml` file adds the value for `type` and `layout` fields to all
-  posts.
+- `talks/` has the blog talks but really they can live in any directory. The
+  `talks/_data.yml` file adds the value for `type` and `layout` fields to all
+  talks.
 - The `menu` field adds any page to the top level site navigation. For example,
   this is in use on `index.njk` and `about.md`. You can configure the order with
   `menu.order` and the text with `menu.title`.
 - `css` files are processed with `postcss` plugin. The imported styles are in
   `_includes/css`
 - `img` folder is copied as is, (keeping the same directory structure).
-- The blog post feed template is in `feed.xml.njk` and `feed.tmpl.js`.
+- The blog talk feed template is in `feed.xml.njk` and `feed.tmpl.js`.
 - This example uses four layouts stored in `_includes/layouts/`:
   - `base.njk`: the top level HTML structure
   - `home.njk`: the home page template (wrapped into `base.njk`)
-  - `post.njk`: the blog post template (wrapped into `base.njk`)
+  - `talk.njk`: the blog talk template (wrapped into `base.njk`)
   - `tag.njk`: the tag page template (wrapped into `base.njk`)
-- `_includes/templates/postlist.njk` is a Nunjucks a reusable template used to
-  display a list of all the posts. `index.njk` has an example of how to use it.
+- `_includes/templates/talklist.njk` is a Nunjucks a reusable template used to
+  display a list of all the talks. `index.njk` has an example of how to use it.
 - `admin/` has the [NetlifyCMS](https://www.netlifycms.org/) configuration so
-  you can edit or create new posts using a friendly CMS.
+  you can edit or create new talks using a friendly CMS.
 
 ## Deployment
 

@@ -14,13 +14,13 @@ export default function ({ site, search }, { md, url, date, htmlUrl }) {
     items: [],
   };
 
-  for (const post of search.pages("type=posts", "date=desc", 10)) {
+  for (const talk of search.pages("type=talks", "date=desc", 10)) {
     feed.items.push({
-      id: url(post.data.url, true),
-      url: url(post.data.url, true),
-      title: post.data.title,
-      content_html: htmlUrl(md(post.data.content), true),
-      date_published: date(post.data.date, "ATOM"),
+      id: url(talk.data.url, true),
+      url: url(talk.data.url, true),
+      title: talk.data.title,
+      content_html: htmlUrl(md(talk.data.content), true),
+      date_published: date(talk.data.date, "ATOM"),
     });
   }
 

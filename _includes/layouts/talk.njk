@@ -1,0 +1,43 @@
+---
+layout: layouts/base.njk
+bodyClass: body-talk
+---
+<article class="talk">
+  <header class="talk-header">
+    <h1 class="talk-title">{{ title }}</h1>
+
+    <nav class="talk-tags">
+    {% for tag in tags %}
+      <a href="/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    {% endfor %}
+    </nav>
+
+    <time class="talk-date" datetime="{{ date | date('DATETIME') }}">
+      {{ date | date('HUMAN_DATE') }}
+    </time>
+  </header>
+
+  <div class="talk-body">
+    {{ content | safe }}
+  </div>
+</article>
+
+<hr>
+
+<nav class="talk-navigation">
+  <ul>
+    {%- set previousTalk = search.previousPage(url, "type=talks") %}
+    {%- if previousTalk %}
+    <li>
+      ← Previous: <a href="{{ previousTalk.data.url }}" rel="prev">{{ previousTalk.data.title }}</a>
+    </li>
+    {% endif %}
+
+    {%- set nextTalk = search.nextPage(url, "type=talks") %}
+    {%- if nextTalk %}
+    <li>
+      <strong>Next: <a href="{{ nextTalk.data.url }}" rel="next">{{ nextTalk.data.title }}</a> →</strong>
+    </li>
+    {% endif %}
+  </ul>
+</nav>

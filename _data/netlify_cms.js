@@ -13,8 +13,8 @@ const config = {
 
 // Posts
 config.collections.push(
-  f.folder("Posts", "posts")
-    .description("Here you can create or edit your posts")
+  f.folder("Talks", "talks")
+    .description("Here you can create or edit your talks")
     .preview(false)
     .create(true)
     .viewFilter("Draft", "draft", true)

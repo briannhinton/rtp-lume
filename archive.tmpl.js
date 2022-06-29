@@ -1,11 +1,11 @@
-export const layout = "layouts/archive.njk";
-export const title = "Archive";
+export const layout = "layouts/all-talks.njk";
+export const title = "All Talks";
 
 export default function* ({ search, paginate }) {
-  const posts = search.pages("type=posts", "date=desc");
+  const talks = search.pages("type=talks", "date=desc");
 
   for (
-    const data of paginate(posts, { url, size: 10 })
+    const data of paginate(talks, { url, size: 10 })
   ) {
     // Show the first page in the menu
     if (data.pagination.page === 1) {
@@ -21,8 +21,8 @@ export default function* ({ search, paginate }) {
 
 function url(n) {
   if (n === 1) {
-    return "/posts/";
+    return "/talks/";
   }
 
-  return `/posts/${n}/`;
+  return `/talks/${n}/`;
 }

@@ -1,7 +1,7 @@
 ---
-layout: layouts/post.njk
+layout: layouts/talk.njk
 title: About Me
-templateClass: tmpl-post
+templateClass: tmpl-talk
 menu:
   visible: true
   order: 2

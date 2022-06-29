@@ -12,13 +12,13 @@
 		<name>{{ site.author.name }}</name>
 		<email>{{ site.author.email }}</email>
 	</author>
-	{%- for post in search.pages("type=posts", "date=desc", 10) %}
+	{%- for talk in search.pages("type=talks", "date=desc", 10) %}
 	<entry>
-		<title>{{ post.data.title }}</title>
-		<link href="{{ post.data.url | url(true) }}"/>
-		<updated>{{ post.data.date | date("ATOM") }}</updated>
-		<id>{{ post.data.url | url(true) }}</id>
-		<content type="html">{{ post.data.content | md | htmlUrl(true) }}</content>
+		<title>{{ talk.data.title }}</title>
+		<link href="{{ talk.data.url | url(true) }}"/>
+		<updated>{{ talk.data.date | date("ATOM") }}</updated>
+		<id>{{ talk.data.url | url(true) }}</id>
+		<content type="html">{{ talk.data.content | md | htmlUrl(true) }}</content>
 	</entry>
 	{%- endfor %}
 </feed>

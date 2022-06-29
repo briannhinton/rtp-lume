@@ -4,12 +4,10 @@ bodyClass: body-tag
 ---
 <h1>{{ title }}</h1>
 
-{% set postslist = results %}
-{% include "templates/postslist.njk" %}
+{% set talksList = results %}
+{% include "templates/talkslist.njk" %}
 
-<hr>
-
-<nav class="post-navigation">
+<nav class="talk-navigation">
   <ul>
     {%- if pagination.previous %}
     <li>
